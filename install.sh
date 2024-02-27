@@ -36,6 +36,7 @@ sudo systemctl enable --now vnstat
 
 #We will now compile the program
 echo "Compiling the daemon with user variables..."
+mkdir ./build
 cmake -S ./src -B ./build/
 cd ./build/ && sudo make install && cd ..
 sudo cp ./SLHD.service /etc/systemd/system/ 
