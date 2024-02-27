@@ -1,0 +1,11 @@
+[Unit]
+Description=This is a simple linux daemon that regularly creates hardware logs and email a log file every 12 hours
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/SimpleHardwareDaemon
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

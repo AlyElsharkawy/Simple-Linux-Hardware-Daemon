@@ -1,0 +1,17 @@
+This daemon requires systemd to function. Most distros use systemd as their init system. This daemon has been tested on:
+  1) Arch Linux
+  2) Fedora
+  3) Ubuntu
+
+Note: You MUST PROVIDE your own email address, app password, and recepient email for the daemon to run. You can add these inside
+userVariables.cpp which is inside the 'src' directory. A app password MUST BE USED. IT WILL NOT WORK WITH REGULAR GMAIL PASSWORDS.
+
+App passwords usually look like this: 'abcd efgh hijk lmno'
+
+Inorder to generate an app password, 2 factor authentication must be enabled. Inside the 2 factory authentication screen, you will bepresented with the option to generate an app password. Generate and one and copy it as you will not be able to see it again. Then,
+put the app password inside the 'SENDER_PASSWORD' section of userVariables.cpp. Also, provide the sender email address inside
+'SENDER_EMAIL' along with the recieving email in the 'RECEPIENT_EMAIL' section.
+
+After that, run install.sh with sudo privelages. All dependencies will then be installed, the daemon will be compiled with the 
+now populated userVariables.cpp file. If you change the userVariables.cpp after initial install, then all you will need to do is 
+to rerun install.sh with sudo privelages.
